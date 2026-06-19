@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İSG Final Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════ -->
+  <!--           BAŞLANGIÇ EKRANI        -->
+  <!-- ══════════════════════════════════ -->
+  <div id="start-screen">
+    <div class="logo">🦺</div>
+    <h1>İSG Final Quiz</h1>
+    <p class="subtitle">Temel İş Sağlığı ve Güvenliği — 2026 Bahar Final</p>
+
+    <div class="topic-grid">
+      <div class="topic-card"><span class="icon">📖</span>Temel Kavramlar</div>
+      <div class="topic-card"><span class="icon">⚠️</span>İş Kazası & Meslek Hastalığı</div>
+      <div class="topic-card"><span class="icon">📋</span>6331 Sayılı Kanun</div>
+      <div class="topic-card"><span class="icon">🚦</span>Güvenlik İşaretleri</div>
+      <div class="topic-card"><span class="icon">🔊</span>Fiziksel Risk Faktörleri</div>
+      <div class="topic-card"><span class="icon">⚗️</span>Kimyasal & Biyolojik</div>
+      <div class="topic-card"><span class="icon">😟</span>Psikososyal & Ergonomi</div>
+      <div class="topic-card"><span class="icon">⚖️</span>İş Hukuku</div>
+    </div>
+
+    <button class="btn-start" onclick="startQuiz()">Sınava Başla →</button>
+  </div>
+
+  <!-- ══════════════════════════════════ -->
+  <!--             QUIZ EKRANI           -->
+  <!-- ══════════════════════════════════ -->
+  <div id="quiz-screen">
+
+    <!-- İlerleme çubuğu -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progress-bar"></div>
+    </div>
+
+    <!-- Sayaç & skor -->
+    <div class="progress-text">
+      <span id="q-counter">Soru 1 / 60</span>
+      <span class="score-badge">✅ <span id="score-display">0</span> doğru</span>
+    </div>
+
+    <!-- Konu etiketi -->
+    <div class="topic-tag" id="topic-tag"></div>
+
+    <!-- Soru kartı -->
+    <div class="question-card">
+      <div class="q-number"  id="q-number"></div>
+      <div class="q-text"    id="q-text"></div>
+    </div>
+
+    <!-- Seçenekler -->
+    <div class="options-grid" id="options-grid"></div>
+
+    <!-- Geri bildirim kutusu -->
+    <div class="feedback-box" id="feedback-box"></div>
+
+    <!-- Sonraki soru butonu -->
+    <button class="btn-next" id="btn-next" onclick="nextQuestion()">Sonraki Soru →</button>
+
+  </div>
+
+  <!-- ══════════════════════════════════ -->
+  <!--            SONUÇ EKRANI           -->
+  <!-- ══════════════════════════════════ -->
+  <div id="result-screen">
+
+    <!-- Yüzde dairesi -->
+    <div class="result-circle" id="result-circle">
+      <div class="result-circle-inner">
+        <div class="result-pct" id="result-pct"></div>
+        <div class="result-sub">başarı</div>
+      </div>
+    </div>
+
+    <div class="result-title" id="result-title"></div>
+    <div class="result-desc"  id="result-desc"></div>
+
+    <!-- İstatistikler -->
+    <div class="result-stats">
+      <div class="stat-box">
+        <div class="stat-num green" id="res-correct"></div>
+        <div class="stat-label">Doğru</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num red" id="res-wrong"></div>
+        <div class="stat-label">Yanlış</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num blue" id="res-total"></div>
+        <div class="stat-label">Toplam</div>
+      </div>
+    </div>
+
+    <button class="btn-restart" onclick="restartQuiz()">Tekrar Çöz 🔄</button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
